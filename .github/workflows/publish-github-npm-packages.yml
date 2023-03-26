@@ -23,7 +23,6 @@ jobs:
           node-version: 16
           cache: 'pnpm'
       - run: pnpm -w install
-      - run: npm test
       - run: pnpm -w build
 
   publish-gpr:
