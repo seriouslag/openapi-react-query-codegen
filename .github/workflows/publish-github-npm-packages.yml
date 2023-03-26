@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'pnpm'
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7
       - run: pnpm -w install
       - run: npm test
       - run: pnpm -w build
@@ -34,14 +34,14 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'pnpm'
           registry-url: https://npm.pkg.github.com/
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7
       - run: pnpm -w install
       - run: pnpm -w build
       - run: pnpm publish
@@ -55,14 +55,14 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7
       - run: pnpm -w install
       - run: pnpm -w build
       - run: pnpm publish
