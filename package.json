@@ -1,6 +1,6 @@
 {
   "name": "@seriouslag/openapi-react-query-codegen",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "OpenAPI React Query Codegen",
   "private": false,
   "bin": {
