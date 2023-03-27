@@ -11,7 +11,7 @@
 ## Install
 
 ```
-$ npm install -D @7nohe/openapi-react-query-codegen
+$ npm install -D @seriouslag/openapi-react-query-codegen
 ```
 
 ## Usage
