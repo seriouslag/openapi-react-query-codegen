@@ -1,5 +1,5 @@
 {
-  "name": "@7nohe/openapi-react-query-codegen",
+  "name": "@seriouslag/openapi-react-query-codegen",
   "version": "0.3.0",
   "description": "OpenAPI React Query Codegen",
   "bin": {
