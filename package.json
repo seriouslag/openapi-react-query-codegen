@@ -2,6 +2,7 @@
   "name": "@seriouslag/openapi-react-query-codegen",
   "version": "0.3.0",
   "description": "OpenAPI React Query Codegen",
+  "private": false,
   "bin": {
     "openapi-rq": "dist/src/cli.js"
   },
