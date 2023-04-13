@@ -1,7 +1,8 @@
 {
-  "name": "@7nohe/openapi-react-query-codegen",
-  "version": "0.3.4",
+  "name": "@seriouslag/openapi-react-query-codegen",
+  "version": "0.3.5",
   "description": "OpenAPI React Query Codegen",
+  "private": false,
   "bin": {
     "openapi-rq": "dist/src/cli.js"
   },
