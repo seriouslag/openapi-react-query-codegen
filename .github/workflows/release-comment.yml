@@ -44,7 +44,7 @@ jobs:
         uses: maxgfr/github-change-json@main
         with:
           key: "name"
-          value: "@$GITHUB_REPOSITORY_OWNER/$GITHUB_REPOSITORY_NAME"
+          value: "@${{ github.repository_owner }}/${{ github.repository_name }}"
           path: package.json
           commit: false # it will not commit the change
 
