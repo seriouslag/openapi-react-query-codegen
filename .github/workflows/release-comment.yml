@@ -40,6 +40,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: rename package name
+        run: sed -i 's/"name": ".*"/"name": "@$GITHUB_REPOSITORY_OWNER/$GITHUB_REPOSITORY_NAME"/' package.json
+
       - run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
