@@ -29,12 +29,11 @@ jobs:
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
 
-      - run: npx changelogithub
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
       - name: Install dependencies
         run: pnpm install
+
+      - name: Setup git
+        run: git config --global user.email "support+actions@github.com" && git config --global user.name "github-actions-bot"
 
       - name: npm version
         run: npm version prerelease --preid=canary
