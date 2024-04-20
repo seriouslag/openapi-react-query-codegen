@@ -1,5 +1,5 @@
 {
-  "name": "@7nohe/openapi-react-query-codegen",
+  "name": "@$GITHUB_REPOSITORY_OWNER/$GITHUB_REPOSITORY_NAME",
   "version": "1.0.7-canary.0",
   "description": "OpenAPI React Query Codegen",
   "bin": {
