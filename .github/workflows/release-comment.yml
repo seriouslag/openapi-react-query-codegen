@@ -40,8 +40,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: rename package name
-        run: sed -i 's/"name": ".*"/"name": "@$GITHUB_REPOSITORY_OWNER/$GITHUB_REPOSITORY_NAME"/' package.json
+      - name: Modify name of the package.json
+        uses: maxgfr/github-change-json@main
+        with:
+          key: "name"
+          value: "@$GITHUB_REPOSITORY_OWNER/$GITHUB_REPOSITORY_NAME"
+          path: package.json
+          commit: false # it will not commit the change
 
       - run: pnpm publish --no-git-checks
         env:
