@@ -3,8 +3,8 @@
 exports[`generate > common.ts 1`] = `
 "// generated with @7nohe/openapi-react-query-codegen@1.0.0 
 import { useQuery, useSuspenseQuery, useMutation, UseQueryResult, UseQueryOptions, UseMutationOptions, UseMutationResult } from "@tanstack/react-query";
-import { DefaultService, DefaultData } from "../requests";
-import { Pet, NewPet, Error } from "../requests/models";
+import { DefaultService } from "../requests/services.gen";
+import { Pet, NewPet, Error, $OpenApiTs } from "../requests/types.gen";
 export type DefaultServiceFindPetsDefaultResponse = Awaited<ReturnType<typeof DefaultService.findPets>>;
 export type DefaultServiceFindPetsQueryResult<TData = DefaultServiceFindPetsDefaultResponse, TError = unknown> = UseQueryResult<TData, TError>;
 export const useDefaultServiceFindPetsKey = "DefaultServiceFindPets";
@@ -31,8 +31,8 @@ exports[`generate > queries.ts 1`] = `
 "// generated with @7nohe/openapi-react-query-codegen@1.0.0 
 import * as Common from "./common";
 import { useQuery, useSuspenseQuery, useMutation, UseQueryResult, UseQueryOptions, UseMutationOptions, UseMutationResult } from "@tanstack/react-query";
-import { DefaultService, DefaultData } from "../requests";
-import { Pet, NewPet, Error } from "../requests/models";
+import { DefaultService } from "../requests/services.gen";
+import { Pet, NewPet, Error, $OpenApiTs } from "../requests/types.gen";
 export const useDefaultServiceFindPets = <TData = Common.DefaultServiceFindPetsDefaultResponse, TError = unknown, TQueryKey extends Array<unknown> = unknown[]>({ limit, tags }: {
     limit?: number;
     tags?: string[];
@@ -65,8 +65,8 @@ exports[`generate > suspense.ts 1`] = `
 "// generated with @7nohe/openapi-react-query-codegen@1.0.0 
 import * as Common from "./common";
 import { useQuery, useSuspenseQuery, useMutation, UseQueryResult, UseQueryOptions, UseMutationOptions, UseMutationResult } from "@tanstack/react-query";
-import { DefaultService, DefaultData } from "../requests";
-import { Pet, NewPet, Error } from "../requests/models";
+import { DefaultService } from "../requests/services.gen";
+import { Pet, NewPet, Error, $OpenApiTs } from "../requests/types.gen";
 export const useDefaultServiceFindPetsSuspense = <TData = Common.DefaultServiceFindPetsDefaultResponse, TError = unknown, TQueryKey extends Array<unknown> = unknown[]>({ limit, tags }: {
     limit?: number;
     tags?: string[];

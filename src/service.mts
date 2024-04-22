@@ -1,6 +1,7 @@
 import ts from "typescript";
 import { ClassDeclaration, Project, SourceFile } from "ts-morph";
 import { MethodDescription } from "./common.mjs";
+import { serviceFileName } from "./constants.mjs";
 
 export type Service = {
   node: SourceFile;
@@ -14,7 +15,7 @@ export type Service = {
 export async function getServices(project: Project): Promise<Service> {
   const node = project
     .getSourceFiles()
-    .find((sourceFile) => sourceFile.getFilePath().includes("services.ts"));
+    .find((sourceFile) => sourceFile.getFilePath().includes(serviceFileName));
 
   if (!node) {
     throw new Error("No service node found");

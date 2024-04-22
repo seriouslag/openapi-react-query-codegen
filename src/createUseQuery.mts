@@ -5,6 +5,7 @@ import {
   capitalizeFirstLetter,
   extractPropertiesFromObjectParam,
   getNameFromMethod,
+  getShortType,
   queryKeyConstraint,
   queryKeyGenericType,
   TData,
@@ -72,15 +73,6 @@ export const createApiResponseType = ({
   };
 };
 
-/**
- * Replace the import("...") surrounding the type if there is one.
- * This can happen when the type is imported from another file, but
- * we are already importing all the types from that file.
- */
-function getShortType(type: string) {
-  return type.replaceAll(/import\("[a-zA-Z\/\.-]*"\)\./g, "");
-}
-
 export function getRequestParamFromMethod(method: MethodDeclaration) {
   if (!method.getParameters().length) {
     return null;
@@ -122,9 +114,6 @@ export function getRequestParamFromMethod(method: MethodDeclaration) {
           refParam.optional
             ? ts.factory.createToken(ts.SyntaxKind.QuestionToken)
             : undefined,
-          // param.hasQuestionToken() ?? param.getInitializer()?.compilerNode
-          //   ? ts.factory.createToken(ts.SyntaxKind.QuestionToken)
-          //   : param.getQuestionTokenNode()?.compilerNode,
           ts.factory.createTypeReferenceNode(refParam.typeName)
         );
       })

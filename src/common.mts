@@ -89,3 +89,12 @@ export function extractPropertiesFromObjectParam(param: ParameterDeclaration) {
     }));
   return paramNodes;
 }
+
+/**
+ * Replace the import("...") surrounding the type if there is one.
+ * This can happen when the type is imported from another file, but
+ * we are already importing all the types from that file.
+ */
+export function getShortType(type: string) {
+  return type.replaceAll(/import\("[a-zA-Z\/\.-]*"\)\./g, "");
+}
